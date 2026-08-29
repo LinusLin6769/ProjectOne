@@ -1,0 +1,9 @@
+# OS / editor cruft
+.DS_Store
+
+# Local-only, never commit
+.env
+*.local
+
+# Sensitive personal data kept out of version control by default
+/private/
