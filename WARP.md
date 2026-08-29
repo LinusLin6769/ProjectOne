@@ -1,12 +1,12 @@
 # ProjectOne — Agent Operating Guide
 This file is auto-loaded by every Warp agent session in this directory. Read it first, every time.
 ## What ProjectOne is
-<!-- one-liner; fill in after the intake interview -->
-A personal agentic workspace for <TODO: purpose>. Current phase: stand up a reliable session-handover system.
+<!-- DRAFT v1 — see context/profile.md; intake interview offered, skipped by user; revisit as usage patterns emerge -->
+A personal agentic workspace for running short, git-backed AI-agent sessions that carry real work forward (tasks, notes, domain tracks like speech). Current phase: define purpose + profile (T-002), decide privacy posture (T-003).
 ## The map (where things live)
 - `STATE.md` — single source of truth for *current* state. Read at start, update at end. Keep it small.
 - `TASKS.md` — current open tasks + ownership. Done tasks are removed; git keeps the record.
-- `context/` — (later) curated profile + domain files. Not created yet.
+- `context/` — curated profile + domain files. `context/profile.md` holds the current (draft) purpose/profile read.
 - **History lives in git, not files.** Past state, session records, and decisions are recovered with `git log` — not stored in ever-growing files.
 ## Session-start ritual (always, before acting)
 On your first response in a session, run this before anything else — even if the user jumps straight into a task.
