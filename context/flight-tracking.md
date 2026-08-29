@@ -2,11 +2,12 @@
 ## Trip brief
 - Route: London ↔ Taiwan (Taipei). ~2-week holiday, covering the last week of November (this year-end).
 - Goal: track fares, flag good deals, initiate purchase once a good one is found (purchase itself needs user approval/payment).
-## Open questions (need user input before locking a target)
-- Preferred London airport: LHR, LGW, or open to STN/LTN if cheaper?
+## Decided (2026-08-29)
+- London airport: any (LHR/LGW/STN/LTN/LCY) — go with whichever gives the best fare.
+- Budget: no fixed ceiling yet — track and surface options rather than filtering hard; revisit the "good deal" heuristic once a number is set.
+## Open questions (still need user input before locking a target)
 - Preferred Taipei airport: TPE (Taoyuan, main hub) vs TSA (Songshan, closer to city, fewer long-haul options)?
 - Exact date flexibility around "last week of November" — fixed dates yet, or +/- a few days?
-- Budget ceiling (return, economy)?
 - Direct only, or open to 1-stop for savings?
 - Checked bags needed? Just 1 traveler?
 ## Market snapshot (checked 2026-08-29, via Kayak/momondo/Cheapflights/hotukdeals — indicative, changes daily)
