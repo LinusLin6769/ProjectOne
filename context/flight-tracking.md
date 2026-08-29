@@ -5,8 +5,8 @@
 ## Decided (2026-08-29)
 - London airport: any (LHR/LGW/STN/LTN/LCY) — go with whichever gives the best fare.
 - Budget: no fixed ceiling yet — track and surface options rather than filtering hard; revisit the "good deal" heuristic once a number is set.
+- Taipei airport: TPE (Taoyuan) — narrow future searches to this destination, drop TSA from scope.
 ## Open questions (still need user input before locking a target)
-- Preferred Taipei airport: TPE (Taoyuan, main hub) vs TSA (Songshan, closer to city, fewer long-haul options)?
 - Exact date flexibility around "last week of November" — fixed dates yet, or +/- a few days?
 - Direct only, or open to 1-stop for savings?
 - Checked bags needed? Just 1 traveler?
@@ -20,7 +20,7 @@
 - Direct return ≤ £580 → flag as a good deal.
 ## Tracking process
 No persistent daemon exists in this repo — checks happen once per session. Each time this task is picked up:
-1. Search current fares for the target date window on LHR/LGW → TPE/TSA (Google Flights, Kayak, momondo).
+1. Search current fares for the target date window on any London airport → TPE (Google Flights, Kayak, momondo).
 2. Append a row to the price log below.
 3. If a fare meets the "good deal" heuristic, flag it to the user immediately (don't wait for session-end) so they can approve a purchase.
 ## Price log
