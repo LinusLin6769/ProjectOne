@@ -9,4 +9,4 @@ Statuses: `todo` / `doing` / `blocked`. Finished tasks are removed — `git log`
 - T-007 — DIY wall display panel: scoped (InkyPi + Waveshare e-ink), paused pending hardware decisions — see context/display-panel.md — Owner: tasks-track — todo
 - T-008 — Flight advisor: scoped + first price scan done, paused pending trip specifics — see context/flight-tracking.md — Owner: tasks-track — todo
 - T-009 — Feedback loop: INBOX.md bulletin board built, paused (unused so far) — Owner: tasks-track — todo
-- T-010 — Design task-launch infra: how ProjectOne spins up/tracks multiple concurrent personal-task threads (this session's ad hoc multi-agent pattern as a starting reference) — Owner: tasks-track — doing
+- T-010 — Task-launch infra: default = single-agent triage, Slack (Oz integration) for notifications+feedback; setup steps not yet done — see context/task-launch-infra.md — Owner: tasks-track — doing

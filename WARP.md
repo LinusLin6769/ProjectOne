@@ -22,6 +22,8 @@ On your first response in a session, run this before anything else — even if t
    Recover history later with `git log`; decisions with `git log --grep=Why`.
 
 Commit message = session log. Body format: `What:` <what changed>  `Why:` <decision/reasoning, if any>  `Next:` <handoff pointer>.
+## Task intake (default triage)
+When the user hands you a batch of asks: triage everything yourself as a single agent first (quick chores done inline, bigger items become `TASKS.md` entries with a `context/<topic>.md` if useful). Only escalate to "Parallel sessions" below if the batch genuinely has independent, parallelizable work — that's an escalation, not the default. See `context/task-launch-infra.md` for the full tiering rationale, including how recurring/monitoring tasks should use Oz Scheduled Agents instead of waiting for a session to be opened.
 ## Parallel sessions (multiple agents at once)
 - **One branch per session:** `git worktree add ../ProjectOne-<topic> -b session/<topic> main`. Work only in your worktree.
 - **Claim your task:** set Owner + `doing` on your task line in `TASKS.md` (on your branch). Never take a task already owned.
