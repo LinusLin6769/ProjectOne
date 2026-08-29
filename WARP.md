@@ -1,12 +1,13 @@
 # ProjectOne — Agent Operating Guide
 This file is auto-loaded by every Warp agent session in this directory. Read it first, every time.
 ## What ProjectOne is
-<!-- DRAFT v1 — see context/profile.md; intake interview offered, skipped by user; revisit as usage patterns emerge -->
-A personal agentic workspace for running short, git-backed AI-agent sessions that carry real work forward (tasks, notes, domain tracks like speech). Current phase: define purpose + profile (T-002), decide privacy posture (T-003).
+<!-- DRAFT v2 — see context/profile.md; intake interview offered, skipped by user; grounded in real tasks-track signal (T-006–T-010) now, revisit as more tracks land -->
+A personal agentic workspace for offloading day-to-day asks — DIY builds, monitoring/price-tracking, writing & presentation drafts, admin — to a single default agent that triages and tracks them as git-backed tasks, escalating to parallel multi-agent sessions only when a batch is genuinely parallelizable. Current phase: define purpose + profile (T-002), decide privacy posture (T-003).
 ## The map (where things live)
 - `STATE.md` — single source of truth for *current* state. Read at start, update at end. Keep it small.
 - `TASKS.md` — current open tasks + ownership. Done tasks are removed; git keeps the record.
-- `context/` — curated profile + domain files. `context/profile.md` holds the current (draft) purpose/profile read.
+- `context/` — curated profile + domain files (one file per topic/project, e.g. `context/flight-tracking.md`). `context/profile.md` holds the current (draft) purpose/profile read.
+- `INBOX.md` — drop-box for new ideas/feedback on ProjectOne itself; check it at session-start alongside `STATE.md`/`TASKS.md`, triage entries into `TASKS.md`.
 - **History lives in git, not files.** Past state, session records, and decisions are recovered with `git log` — not stored in ever-growing files.
 ## Session-start ritual (always, before acting)
 On your first response in a session, run this before anything else — even if the user jumps straight into a task.
@@ -21,6 +22,8 @@ On your first response in a session, run this before anything else — even if t
    Recover history later with `git log`; decisions with `git log --grep=Why`.
 
 Commit message = session log. Body format: `What:` <what changed>  `Why:` <decision/reasoning, if any>  `Next:` <handoff pointer>.
+## Task intake (default triage)
+When the user hands you a batch of asks: triage everything yourself as a single agent first (quick chores done inline, bigger items become `TASKS.md` entries with a `context/<topic>.md` if useful). Only escalate to "Parallel sessions" below if the batch genuinely has independent, parallelizable work — that's an escalation, not the default. See `context/task-launch-infra.md` for the full tiering rationale, including how recurring/monitoring tasks should use Oz Scheduled Agents instead of waiting for a session to be opened.
 ## Parallel sessions (multiple agents at once)
 - **One branch per session:** `git worktree add ../ProjectOne-<topic> -b session/<topic> main`. Work only in your worktree.
 - **Claim your task:** set Owner + `doing` on your task line in `TASKS.md` (on your branch). Never take a task already owned.
