@@ -6,7 +6,8 @@ A personal agentic workspace for <TODO: purpose>. Current phase: stand up a reli
 ## The map (where things live)
 - `STATE.md` — single source of truth for *current* state. Read at start, update at end. Keep it small.
 - `TASKS.md` — current open tasks + ownership. Done tasks are removed; git keeps the record.
-- `context/` — (later) curated profile + domain files. Not created yet.
+- `context/` — curated profile + domain files (one file per topic/project, e.g. `context/flight-tracking.md`).
+- `INBOX.md` — drop-box for new ideas/feedback on ProjectOne itself; check it at session-start alongside `STATE.md`/`TASKS.md`, triage entries into `TASKS.md`.
 - **History lives in git, not files.** Past state, session records, and decisions are recovered with `git log` — not stored in ever-growing files.
 ## Session-start ritual (always, before acting)
 On your first response in a session, run this before anything else — even if the user jumps straight into a task.
