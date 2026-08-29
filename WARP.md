@@ -13,8 +13,9 @@ A personal agentic workspace for offloading day-to-day asks — DIY builds, moni
 On your first response in a session, run this before anything else — even if the user jumps straight into a task.
 1. Read `STATE.md` — current focus + next actions.
 2. Run `git log --oneline -12` to see what recent sessions did.
-3. Check `TASKS.md` for your assigned/unclaimed task.
-4. Restate in 2–3 lines where things stand and what you're about to do. Then proceed.
+3. Run `git worktree list` to see any active parallel tracks — a worktree can hold real, uncommitted work even with no live conversation attached to it.
+4. Check `TASKS.md` for your assigned/unclaimed task.
+5. Restate in 2–3 lines where things stand and what you're about to do. Then proceed.
 ## Session-end ritual (always, before you stop)
 1. Update `STATE.md` to reflect reality *now*. Edit in place; keep it short.
 2. Update `TASKS.md`: remove finished tasks, add new ones.
@@ -32,5 +33,6 @@ When the user hands you a batch of asks: triage everything yourself as a single 
 - **Hand off via committed files/branches, not conversation memory.**
 ## Principles
 - Canonical memory is the repo (small current files + git history), not the conversation. Threads are disposable.
+- Recovery never depends on reconnecting to a specific agent conversation. Any fresh session picks up a track via its worktree/branch + git state (`git worktree list`, `git log`, `git status`), not by finding the same conversation again. If a conversation is lost, nothing important should be lost with it — that's the point of committing early and often.
 - Files stay small and current; git holds history. No append-only logs.
 - Recycle: distill signal into STATE.md; let removed detail live in git history.
