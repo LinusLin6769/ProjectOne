@@ -6,7 +6,7 @@ Statuses: `todo` / `doing` / `blocked`. Finished tasks are removed — `git log`
 - T-003 — Decide privacy posture (in/out-of-scope data) — Owner: — todo
 - T-004 — Pick pilot slice to test the loop — Owner: — todo
 - T-005 — Battle-test parallel worktree + PR flow once (milestone 2) — Owner: — todo
-- T-007 — DIY wall display panel: scoped (InkyPi + Waveshare e-ink), paused pending hardware decisions — see context/display-panel.md — Owner: tasks-track — todo
-- T-008 — Flight advisor: any London airport → TPE decided, paused pending date flexibility + stop tolerance — see context/flight-tracking.md — Owner: tasks-track — todo
-- T-009 — Feedback loop: INBOX.md bulletin board built, paused (unused so far) — Owner: tasks-track — todo
-- T-010 — Task-launch infra: default = single-agent triage, Slack (Oz integration) chosen for notifications+feedback; staying as documented plan, user does not want setup actioned yet — see context/task-launch-infra.md — Owner: tasks-track — todo
+- T-007 — DIY wall display panel: long-running multi-phase project (hardware/software/research/learning), potential future ProjectOne interface — escalated to its own track — see context/display-panel.md — Owner: diy-track — doing
+- T-008 — Flight advisor (Taiwan trip): any London airport → TPE decided, escalated to its own track (also driving T-010's real implementation) — see context/flight-tracking.md — Owner: trip-track — doing
+- T-009 — Feedback loop: INBOX.md bulletin board built, dormant (unused so far) — Owner: tasks-track — todo
+- T-010 — Task-launch infra: setup (Oz Scheduled Agents + Slack integration) now actively being implemented, driven by trip-track's real need — see context/task-launch-infra.md — Owner: trip-track — doing
