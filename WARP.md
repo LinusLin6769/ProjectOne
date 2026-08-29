@@ -9,6 +9,7 @@ A personal agentic workspace for <TODO: purpose>. Current phase: stand up a reli
 - `context/` — (later) curated profile + domain files. Not created yet.
 - **History lives in git, not files.** Past state, session records, and decisions are recovered with `git log` — not stored in ever-growing files.
 ## Session-start ritual (always, before acting)
+On your first response in a session, run this before anything else — even if the user jumps straight into a task.
 1. Read `STATE.md` — current focus + next actions.
 2. Run `git log --oneline -12` to see what recent sessions did.
 3. Check `TASKS.md` for your assigned/unclaimed task.
