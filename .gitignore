@@ -8,7 +8,12 @@
 # Sensitive personal data kept out of version control by default
 /private/
 
-# Local Python env + vendored/cloned third-party tools (not ProjectOne's own content)
+# Deprecated shared project venv (pipx is the standard now — see WARP.md).
+# Keep ignoring until the main-checkout copy is deleted; do not recreate.
 /.venv/
+
+# Local clones of third-party tool sources (editable pipx installs point here)
 /tools/
+
+# Aider local state
 .aider*

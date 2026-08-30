@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# ProjectOne tool wrapper — invokes the pipx-installed aider binary.
+# From repo root: ./bin/aider …
+# From a sibling worktree: ../ProjectOne/bin/aider …  (after this lands on main)
+# Do not hardcode venv paths; pipx owns the install under ~/.local/bin.
+set -euo pipefail
+
+AIDER_BIN="${HOME}/.local/bin/aider"
+if [[ ! -x "$AIDER_BIN" ]]; then
+  echo "error: aider not found at ${AIDER_BIN}" >&2
+  echo "Restore: brew bundle install && pipx ensurepath && pipx install -e <path-to>/tools/aider" >&2
+  echo "See WARP.md (Brewfile / bin/ / pipx conventions)." >&2
+  exit 127
+fi
+exec "$AIDER_BIN" "$@"

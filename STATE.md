@@ -1,26 +1,24 @@
 # ProjectOne — Current State
-_Updated: 2026-08-29 — session: parallel-tracks (speech/purpose/tasks)_
+_Updated: 2026-08-30 — session: deps-infra (T-012)_
 ## Current focus
-First real test of WARP.md's parallel-session model, largely complete: tasks-track and purpose-track are merged into `main`. speech-track has converged (alumni bio-card slide) but is parked — user is revisiting it later, not blocking on it.
+deps-track built dependency management infra on `session/deps-infra` (Brewfile + pipx aider + `bin/` wrappers). Awaiting integrator merge to `main`. Old shared `.venv` is deprecated but still held open by a live aider process — remove later when safe.
 ## Status snapshot
-- purpose-track merged: draft v2 purpose line in `WARP.md` + `context/profile.md`, grounded in this session's real task variety (still flagged DRAFT, pending direct answers to remaining open questions).
-- tasks-track merged: T-006 intake done; T-007 (wall display) scoped and parked per user (no further action); T-008 (flight tracker) scoped with TPE locked in as the Taipei airport, date flexibility/stop tolerance still open; T-009 (`INBOX.md` feedback loop) built, unused so far; T-010 (task-launch infra) decided in principle but user wants it to stay a documented plan for now — no Oz Scheduled Agents/Slack setup.
-- speech-track (not yet merged, branch `session/speech`, worktree `../ProjectOne-speech`): converged on a 1-slide alumni bio card (real bio + institution-themed design), user fine-tuning directly — parked until user revisits.
+- T-012 (deps-infra): Brewfile (gh, librsvg, poppler, python@3.12, pipx); aider migrated to `pipx install -e tools/aider`; `bin/aider` wrapper verified (`./bin/aider --version` → 0.86.3.dev53+g5dc9490bb). Conventions documented in WARP.md.
+- purpose/tasks tracks already on main from earlier; speech-track still parked unmerged.
 ## Active worktrees
-- `main` — `/Users/linuslin/Desktop/ProjectOne` — integrator's checkout, up to date.
-- `session/purpose` — `../ProjectOne-purpose` — merged into main (e4e2fc2); clean; kept in case profile needs further refinement, otherwise removable.
-- `session/tasks-intake` — `../ProjectOne-tasks` — merged into main (7f8e13b); clean; kept in case T-007/T-008 need more work, otherwise removable.
-- `session/speech` — `../ProjectOne-speech` — NOT merged (bc96015); clean; active/parked at user's request — resume here directly to continue.
-Always re-run `git status` in a worktree before trusting this list; it can drift between updates.
+- `main` — `/Users/linuslin/Desktop/ProjectOne` — integrator checkout.
+- `session/deps-infra` — `../ProjectOne-deps` — THIS track; ready to merge (do not self-merge).
+- `session/speech` — `../ProjectOne-speech` — parked, unmerged.
+- Other session worktrees may still exist; re-run `git worktree list` before trusting this list.
 ## Open threads
-- T-002 (purpose/profile): DRAFT v2, could still be refined if user answers the remaining profile questions (day-to-day feel, priorities, cadence).
-- T-003 (privacy posture): still fully open, untouched this session.
-- T-004/T-005 (pilot slice / battle-test parallel flow): this batch (3 worktrees, 2 merges, 1 conflict resolved) is a real instance of both — worth explicitly closing once speech-track also lands.
-- T-007/T-008: paused pending user decisions (T-007: budget/screen/enclosure; T-008: date flexibility, stop tolerance).
+- Integrator: merge `session/deps-infra` → main; then existing worktrees need merge/rebase to pick up `bin/` + Brewfile + WARP.md.
+- After live aider (old `.venv`) exits: `rm -rf /Users/linuslin/Desktop/ProjectOne/.venv`.
+- T-002/T-003 and speech-track still open as before.
 ## Next actions
-1. Merge speech-track whenever the user resumes/finishes fine-tuning it.
-2. Close out T-004/T-005 once speech-track lands (all 3 tracks integrated).
-3. Otherwise idle — remaining open items need user decisions, not agent action.
+1. Integrator merges deps-infra branch.
+2. Remove deprecated `.venv` when no process holds it.
+3. Resume speech-track / profile / privacy when user is ready.
 ## Settled
 - History/versioning via git, not append-only files (see WARP.md).
-- Task intake default: single-agent triage by default; parallel worktrees are an escalation, not the default (see WARP.md's "Task intake" section).
+- Task intake default: single-agent triage; parallel worktrees are an escalation.
+- System deps via Brewfile; Python CLIs via pipx; invoke through `bin/` wrappers (see WARP.md Dependency conventions).

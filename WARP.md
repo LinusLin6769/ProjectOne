@@ -8,7 +8,15 @@ A personal agentic workspace for offloading day-to-day asks — DIY builds, moni
 - `TASKS.md` — current open tasks + ownership. Done tasks are removed; git keeps the record.
 - `context/` — curated profile + domain files (one file per topic/project, e.g. `context/flight-tracking.md`). `context/profile.md` holds the current (draft) purpose/profile read.
 - `INBOX.md` — drop-box for new ideas/feedback on ProjectOne itself; check it at session-start alongside `STATE.md`/`TASKS.md`, triage entries into `TASKS.md`.
+- `Brewfile` — source of truth for Homebrew system packages this project needs. Restore with `brew bundle install` (from repo root). Keep it scoped to ProjectOne; do not dump the whole machine.
+- `bin/` — git-tracked thin wrapper scripts for project tools. Standard invocation layer: from repo root `./bin/<tool>`, from a sibling worktree `../ProjectOne/bin/<tool>` (all worktrees live as siblings of the main checkout). Wrappers resolve the real binary (usually via pipx under `~/.local/bin`); they do not hardcode venv paths or rely on ad-hoc PATH edits.
+- `tools/` — local clones of third-party tool sources (gitignored). Editable installs point here (e.g. aider). Not committed; each machine/clone re-fetches as needed.
 - **History lives in git, not files.** Past state, session records, and decisions are recovered with `git log` — not stored in ever-growing files.
+## Dependency conventions
+- **System packages:** `Brewfile` + `brew bundle install`. Add a formula when a ProjectOne workflow needs it; prune when unused.
+- **Python CLI tools:** install with **pipx** (per-tool isolated venvs), not a shared project-wide `.venv`. Example restore for aider: `pipx ensurepath && pipx install -e <path-to>/tools/aider` (use `python@3.12` from the Brewfile). Invoke via `bin/<tool>`.
+- **Do not recreate a shared project `.venv`.** The old `/ProjectOne/.venv` (editable aider install) is deprecated after the pipx migration; remove it when no process still holds it open (`rm -rf .venv` on the main checkout).
+- **Propagation caveat:** existing worktree branches will not see new `bin/`, `Brewfile`, or these WARP.md lines until they next merge/rebase from `main`.
 ## Session-start ritual (always, before acting)
 On your first response in a session, run this before anything else — even if the user jumps straight into a task.
 1. Read `STATE.md` — current focus + next actions.
