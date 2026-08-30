@@ -7,3 +7,7 @@
 
 # Sensitive personal data kept out of version control by default
 /private/
+
+# Local Python env + vendored/cloned third-party tools (not ProjectOne's own content)
+/.venv/
+/tools/
