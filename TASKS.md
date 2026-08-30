@@ -10,5 +10,3 @@ Statuses: `todo` / `doing` / `blocked`. Finished tasks are removed — `git log`
 - T-008 — Flight advisor (Taiwan trip): any London airport → TPE decided, escalated to its own track (also driving T-010's real implementation) — see context/flight-tracking.md — Owner: trip-track — doing
 - T-009 — Feedback loop: INBOX.md bulletin board built, dormant (unused so far) — Owner: tasks-track — todo
 - T-010 — Task-launch infra: setup (Oz Scheduled Agents + Slack integration) now actively being implemented, driven by trip-track's real need — see context/task-launch-infra.md — Owner: trip-track — doing
-- T-011 — Research open-source/cost-effective alternatives to paid-per-token AI tooling: recommendation written, awaiting integrator review/merge — see context/ai-cost-alternatives.md — Owner: ai-cost-research — doing
-- T-012 — Dependency management infra (Brewfile + pipx + bin/ wrappers): implemented on session/deps-infra, awaiting integrator merge; leftover: rm deprecated main-checkout `.venv` once live aider exits — Owner: deps-track — doing

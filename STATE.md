@@ -1,22 +1,25 @@
 # ProjectOne — Current State
-_Updated: 2026-08-30 — session: deps-infra (T-012)_
+_Updated: 2026-08-30 — session: integrator (post deps-infra merge)_
 ## Current focus
-deps-track built dependency management infra on `session/deps-infra` (Brewfile + pipx aider + `bin/` wrappers). Awaiting integrator merge to `main`. Old shared `.venv` is deprecated but still held open by a live aider process — remove later when safe.
+deps-infra (T-012) merged to `main` (Brewfile + pipx aider + `bin/` wrappers, docs in WARP.md). Worktree/branch cleaned up. diy-track and trip-track continue in parallel; diy-track currently blocked awaiting user input in its own conversation.
 ## Status snapshot
-- T-012 (deps-infra): Brewfile (gh, librsvg, poppler, python@3.12, pipx); aider migrated to `pipx install -e tools/aider`; `bin/aider` wrapper verified (`./bin/aider --version` → 0.86.3.dev53+g5dc9490bb). Conventions documented in WARP.md.
+- T-012 (deps-infra): merged to main (`c49e0db`). Brewfile (gh, librsvg, poppler, python@3.12, pipx); aider migrated to `pipx install -e tools/aider`; `bin/aider` wrapper verified. Conventions documented in WARP.md.
+- T-008/T-010 (trip-track): trip params locked (dates flexible, must cover 25 Nov 2026, 1-stop OK); fare search logged in context/flight-tracking.md (best so far ≈£504, above £480 threshold). T-010 Slack design reworked to a portable webhook/bot-token approach (scripts/slack_notify.sh, scripts/slack_pull_feedback.sh) instead of Oz-specific triggers; Scheduled Agent creation deferred pending confirmed paid plan.
+- T-007 (diy-track): in progress, currently blocked awaiting user input in its own conversation.
 - purpose/tasks tracks already on main from earlier; speech-track still parked unmerged.
 ## Active worktrees
 - `main` — `/Users/linuslin/Desktop/ProjectOne` — integrator checkout.
-- `session/deps-infra` — `../ProjectOne-deps` — THIS track; ready to merge (do not self-merge).
+- `session/trip-taiwan` — `../ProjectOne-trip` — T-008/T-010, active.
+- `session/diy-panel` — `../ProjectOne-diy` — T-007, active (blocked on user).
 - `session/speech` — `../ProjectOne-speech` — parked, unmerged.
-- Other session worktrees may still exist; re-run `git worktree list` before trusting this list.
+- `session/tasks-intake`, `session/purpose`, `session/ai-cost-research` — likely stale/already merged; re-run `git worktree list` before trusting, and prune with `git worktree remove` once confirmed merged.
 ## Open threads
-- Integrator: merge `session/deps-infra` → main; then existing worktrees need merge/rebase to pick up `bin/` + Brewfile + WARP.md.
-- After live aider (old `.venv`) exits: `rm -rf /Users/linuslin/Desktop/ProjectOne/.venv`.
+- After live aider (old `.venv`) exits: `rm -rf /Users/linuslin/Desktop/ProjectOne/.venv` on main checkout.
+- Other active worktrees need to merge/rebase from main to pick up `bin/` + Brewfile + WARP.md changes.
 - T-002/T-003 and speech-track still open as before.
 ## Next actions
-1. Integrator merges deps-infra branch.
-2. Remove deprecated `.venv` when no process holds it.
+1. Remove deprecated `.venv` when no process holds it.
+2. Prune merged/stale worktrees (tasks-intake, purpose, ai-cost-research) after confirming.
 3. Resume speech-track / profile / privacy when user is ready.
 ## Settled
 - History/versioning via git, not append-only files (see WARP.md).
