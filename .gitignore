@@ -11,3 +11,4 @@
 # Local Python env + vendored/cloned third-party tools (not ProjectOne's own content)
 /.venv/
 /tools/
+.aider*
