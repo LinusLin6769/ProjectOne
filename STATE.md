@@ -12,14 +12,15 @@ deps-infra (T-012) merged to `main` (Brewfile + pipx aider + `bin/` wrappers, do
 - `session/trip-taiwan` — `../ProjectOne-trip` — T-008/T-010, active.
 - `session/diy-panel` — `../ProjectOne-diy` — T-007, active (blocked on user).
 - `session/speech` — `../ProjectOne-speech` — parked, unmerged.
-- `session/tasks-intake`, `session/purpose`, `session/ai-cost-research` — likely stale/already merged; re-run `git worktree list` before trusting, and prune with `git worktree remove` once confirmed merged.
+- `session/ai-cost-research` — `../ProjectOne-ai-costs` — original T-011 merged, but branch tip has one unmerged commit (OpenClaw deep-dive); being resumed for a Claude API key + Aider discussion.
+- `session/deps-infra` (pipx aider), `session/purpose`, `session/tasks-intake` were merged and pruned (worktrees + local branches removed).
 ## Open threads
 - After live aider (old `.venv`) exits: `rm -rf /Users/linuslin/Desktop/ProjectOne/.venv` on main checkout.
 - Other active worktrees need to merge/rebase from main to pick up `bin/` + Brewfile + WARP.md changes.
 - T-002/T-003 and speech-track still open as before.
 ## Next actions
 1. Remove deprecated `.venv` when no process holds it.
-2. Prune merged/stale worktrees (tasks-intake, purpose, ai-cost-research) after confirming.
+2. Once ai-cost-research's Claude API key + Aider discussion wraps, merge its OpenClaw deep-dive commit and prune that worktree too.
 3. Resume speech-track / profile / privacy when user is ready.
 ## Settled
 - History/versioning via git, not append-only files (see WARP.md).
